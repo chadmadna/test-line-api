@@ -12,7 +12,6 @@ var port = process.env.PORT || 3000
 
 http.createServer(function (req, res) {
     reqUrl = url.parse(req.url, true).pathname
-    console.log("Request received: " + req.url + "\n" + JSON.stringify(req.headers) + "\n" + req.body)
     function echo(err, body) {
         if (err) console.log(err)
         if (body.eventType === 138311609000106303) {
@@ -41,6 +40,7 @@ http.createServer(function (req, res) {
         jsonBody(req, res, function (err, body) {
             if (err) return console.log(err)
             console.log(JSON.stringify(body, null, 2))
+            res.end('mantab bosq')
         });
     } else if (reqUrl === '/') {
         textBody(req, res, function (err, body) {
