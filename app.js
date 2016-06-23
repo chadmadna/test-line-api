@@ -14,16 +14,16 @@ http.createServer(function (req, res) {
     reqUrl = url.parse(req.url, true).pathname
     function echo(err, body) {
         if (err) console.log(err)
-        if (body.eventType === 138311609000106303) {
+        if (body.result.eventType === 138311609000106303) {
             sendJson(req, res, {
                 body: {
-                    "to": body.from,
+                    "to": body.result.from,
                     "toChannel": 1383378250,
                     "eventType": "138311608800106203",
                     "content": {
                         "contentType": 1,
                         "toType": 1,
-                        "text": body.content.text
+                        "text": body.result.content.text
                     }
                 },
                 statusCode: 200,
@@ -34,7 +34,7 @@ http.createServer(function (req, res) {
                 }
             })
         }
-        console.log(body.content.text)
+        console.log(body.result.content.text)
     }
     if (reqUrl === '/line') {
         jsonBody(req, res, function (err, body) {
