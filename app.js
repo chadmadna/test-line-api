@@ -11,13 +11,10 @@ var channelMID = process.env.CHANNEL_MID
 var port = process.env.PORT || 3000
 
 http.createServer(function (req, res) {
-    console.log("Request received: " +
-        req.url + "\n" +
-        JSON.stringify(req.headers) + "\n"
-        + req.body)
+    reqUrl = url.parse(req.url, true).pathname
+    console.log("Request received: " + req.url + "\n" + JSON.stringify(req.headers) + "\n" + req.body)
     function echo(err, body) {
         if (err) console.log(err)
-
         if (body.eventType === 138311609000106303) {
             sendJson(req, res, {
                 body: {
@@ -40,9 +37,12 @@ http.createServer(function (req, res) {
         }
         console.log(body.content.text)
     }
-    if (url.parse(req.url, true).pathname === '/line') {
-        jsonBody(req, res, echo);
-    } else {
+    if (reqUrl === '/line') {
+        jsonBody(req, res, function (err, body) {
+            if (err) return console.log(err)
+            console.log(JSON.stringify(body, null, 2))
+        });
+    } else if (reqUrl === '/') {
         textBody(req, res, function (err, body) {
             if (err) console.log(err)
             sendJson(req, res, "It works!")
