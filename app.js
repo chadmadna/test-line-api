@@ -11,8 +11,11 @@ var channelMID = process.env.CHANNEL_MID
 var port = process.env.PORT || 3000
 
 http.createServer(function (req, res) {
+    console.log("Request received: " +
+        req.url + "\n" +
+        JSON.stringify(req.headers) + "\n"
+        + req.body)
     function echo(err, body) {
-
         if (err) console.log(err)
 
         if (body.eventType === 138311609000106303) {
