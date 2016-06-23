@@ -42,3 +42,9 @@ jspm_packages
 
 # WebStorm
 .idea/
+
+# Mac OS X
+.DS_Store
+
+# Environment Variables
+.env

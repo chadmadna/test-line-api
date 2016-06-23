@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/chadmadna/test-line-api/issues"
   },
-  "homepage": "https://github.com/chadmadna/test-line-api#readme"
+  "homepage": "https://github.com/chadmadna/test-line-api#readme",
+  "dependencies": {
+    "body": "5.1.0",
+    "node-telegram-bot-api": "0.23.3",
+    "send-data": "8.0.0"
+  }
 }
