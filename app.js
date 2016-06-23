@@ -8,6 +8,8 @@ var channelID = process.env.CHANNEL_ID
 var channelSecret = process.env.CHANNEL_SECRET
 var channelMID = process.env.CHANNEL_MID
 
+var port = process.env.PORT || 3000
+
 http.createServer(function (req, res) {
     function echo(err, body) {
 
@@ -43,5 +45,5 @@ http.createServer(function (req, res) {
             sendJson(req, res, "It works!")
         })
     }
-}).listen(3000)
-console.log('HTTP server listening at 3000')
+}).listen(port)
+console.log('HTTP server listening at ' + port)
