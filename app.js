@@ -1,6 +1,6 @@
 var http = require('http')
 var sendJson = require('send-data/json')
-var textBody = require('body/text')
+var textBody = require('body')
 var jsonBody = require('body/json')
 var url = require('url')
 
@@ -40,7 +40,7 @@ http.createServer(function (req, res) {
     } else {
         textBody(req, res, function (err, body) {
             if (err) console.log(err)
-            sendJson(req, res, { body: "It works!" })
+            sendJson(req, res, "It works!")
         })
     }
 }).listen(3000)
