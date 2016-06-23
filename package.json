@@ -1,0 +1,19 @@
+{
+  "name": "test-line-api",
+  "version": "1.0.0",
+  "description": "Testing LINE Messenger's trial BOT API.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadmadna/test-line-api.git"
+  },
+  "author": "Irsyad Nabil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadmadna/test-line-api/issues"
+  },
+  "homepage": "https://github.com/chadmadna/test-line-api#readme"
+}
