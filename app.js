@@ -45,7 +45,7 @@ http.createServer(function (req, res) {
     } else if (reqUrl === '/') {
         textBody(req, res, function (err, body) {
             if (err) console.log(err)
-            sendJson(req, res, "It works!")
+            sendJson(req, res, echo)
         })
     }
 }).listen(port)
